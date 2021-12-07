@@ -4,6 +4,13 @@ Data collection 07Dec2021
 Task: 
 	- collect data for samples set at different conditions.
 
+Measurements:
+	- 3 times 10 second each object
+
+Filename:
+	- Day_ConditionName_Label
+		- ConditionName: Normal / FreshAir / WetAir
+
 Samle set:
 	- air
 	- beer
