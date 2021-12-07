@@ -1,0 +1,22 @@
+Data collection 07Dec2021
+---------------------------
+
+Task: 
+	- collect data for samples set at different conditions.
+
+Samle set:
+	- air
+	- beer
+	- wine
+	- orange
+	- lemon
+	- bread white
+	- bread dark
+	- ground coffee
+	- potato
+	- carrot
+
+Conditions:
+	- Normal kitchen conditions (~22degC)
+	- Kitchen with open window (fresh and cold ~16..18degC)
+	- Bath after shower (increased hymidity, hot shower ~2..3min, warm ~23degC)
