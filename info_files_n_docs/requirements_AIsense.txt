@@ -8,3 +8,4 @@ cbor2==5.4.2
 tensorflow==2.6.0
 tensorboard==2.6.0
 streamlit==1.2.0
+edge_impulse_linux==1.0.6
