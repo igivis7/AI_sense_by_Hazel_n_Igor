@@ -10,4 +10,4 @@ tensorboard==2.6.0
 streamlit==1.2.0
 edge_impulse_linux==1.0.6
 tqdm==4.62.3
-serial==0.0.97
+pyserial==3.5
