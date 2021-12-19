@@ -1,3 +1,4 @@
+from altair.vegalite.v4.schema.core import Header
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -52,8 +53,6 @@ if st.button('Predicting:'):
          if st.session_state['data2predictArrST'].size == 4:
             predictionN = new_model.predict(st.session_state['data2predictArrST'])
             #st.write(':smile:'*3)
-            #just for test data
-
             # Plot
             chart_data = pd.DataFrame(
                     predictionN.transpose(),
