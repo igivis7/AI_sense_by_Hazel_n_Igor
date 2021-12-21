@@ -26,25 +26,20 @@ if 'GGS_df' not in st.session_state:
 
 
 ## Load into a new model
-model_ff = tf.keras.models.load_model("./model_c1_n20n20n10n10_cle_upsx2_norm")
+model_ff = tf.keras.models.load_model("./model_c5_n36d02n24d02_mk1")
 
-N_of_readings = 10 #5Hz=200ms : 10 -> 2sec
+N_of_readings = 100 #10Hz=100ms : 10 -> 1sec
 
-classes_values = ['air',
-                  'beer',
-                  'bread',
-                  'carrot',
-                  'cheese',
+classes_values = ['beer',
                   'coffee',
-                  'cola',
-                  'cucumber',
-                  'wein',
-                  'lemon',
-                  'orange',
-                  'sprite',
-                  'tomato']
+                  'orange']
+
 
 ## Data to predict
+test_sample_l = [[2378, 728, 642, 540, 210,  25,  34],
+                    [2378,  548, 153, 514, 318 , 25 , 34],
+                    [2378,  900, 372, 804, 359,  26,  33]]
+
 test_sample = [2378, 64, 15, 64, 93, 15, 66]
 
 
@@ -100,7 +95,7 @@ else:
 ##------------------------
 ## Button Simulation
 ##------------------------
-if st.button('Get premeasured test data:'):
+if st.button('Get random premeasured test data:'):
     my_bar = st.progress(0)
 
     ## collect data to predict
@@ -109,7 +104,8 @@ if st.button('Get premeasured test data:'):
     baud_rate = 9600
 
     GGS_list = []
- 
+    rand_sample_ind = np.random.randint(3)
+    test_sample = test_sample_l[rand_sample_ind]
     ## Simulations
     ##----------------------------
     time_ms    = np.linspace(start=test_sample[0], stop=test_sample[0]+10000, num=N_of_readings, dtype=int)
