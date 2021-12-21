@@ -57,9 +57,9 @@ st.write('4 Elements are extracted from the gas sensors. They are NO2, C2H5CH, V
 
 
 ##------------------------
-## Button Predicting
+## Button Data reading
 ##------------------------
-if st.button('Going into smelling mode:'):
+if st.button('Read data from sensor:'):
     my_bar = st.progress(0)
 
     ## collect data to predict
@@ -70,30 +70,45 @@ if st.button('Going into smelling mode:'):
     GGS_list = []
     init_time = round(time.time(),3)*1000
     percent_complete_counter = 0
-    # percent_complete = 0
+    percent_complete = 0
 
-    # with serial.Serial(serial_port, baud_rate) as ser:
-    #     for cc1 in range(10):
-    #         line_z = ser.readline();
-    #         line_dec_z = line_z.decode("utf-8")
-    #     while len(GGS_list) < N_of_readings:
-    #         line = ser.readline();
-    #         line_dec = line.decode("utf-8") #ser.readline returns a binary, convert to string
-    #         lst0 = line_dec.split(",")
-    #         lst1 = [int(x) for x in lst0]
-    #         if len(lst1)==6:
-    #             GGS_list += [[int(round(time.time(),3)*1000-init_time)] + lst1]
-    #             percent_complete_counter += 1
-    #             my_bar.progress(int(percent_complete_counter / N_of_readings * 100))
-    # my_bar.progress(100)  #just for visualization    
-    # 
-    # st.session_state['GGS_df'] = pd.DataFrame(GGS_list,
-    #                  columns=["time_ms", "NO2", 
-    #                  "C2H5OH", "VOC", "CO",
-    #                   "TdegC", "RH"])
+    with serial.Serial(serial_port, baud_rate) as ser:
+        for cc1 in range(10):
+            line_z = ser.readline();
+            line_dec_z = line_z.decode("utf-8")
+        while len(GGS_list) < N_of_readings:
+            line = ser.readline();
+            line_dec = line.decode("utf-8") #ser.readline returns a binary, convert to string
+            lst0 = line_dec.split(",")
+            lst1 = [int(x) for x in lst0]
+            if len(lst1)==6:
+                GGS_list += [[int(round(time.time(),3)*1000-init_time)] + lst1]
+                percent_complete_counter += 1
+                my_bar.progress(int(percent_complete_counter / N_of_readings * 100))
+    my_bar.progress(100)  #just for visualization    
+    
+    st.session_state['GGS_df'] = pd.DataFrame(GGS_list,
+                     columns=["time_ms", "NO2", 
+                     "C2H5OH", "VOC", "CO",
+                      "TdegC", "RH"])
 
 
+else:
+    pass
 
+##------------------------
+## Button Simulation
+##------------------------
+if st.button('Get premeasured test data:'):
+    my_bar = st.progress(0)
+
+    ## collect data to predict
+    # N_of_readings = 10 #5Hz=200ms : 10 -> 2sec
+    serial_port = '/dev/ttyACM0'
+    baud_rate = 9600
+
+    GGS_list = []
+ 
     ## Simulations
     ##----------------------------
     time_ms    = np.linspace(start=test_sample[0], stop=test_sample[0]+10000, num=N_of_readings, dtype=int)
@@ -161,7 +176,8 @@ if st.button('Predicting:'):
                     y=alt.Y("index", type="nominal", title="Category"),
                     #color=alt.Color("variable", type="nominal", title=""),
                     order=alt.Order("variable", sort="descending"),
-                    )
+                    ).properties(title='Predictions'
+                    ).properties(width=100, height=305)
                 )
             st.altair_chart(chart, use_container_width=True)
         else:
@@ -170,8 +186,18 @@ if st.button('Predicting:'):
     with col2:
         # st.session_state['GGS_df']
         df2plot = st.session_state['GGS_df'].iloc[:,1:7]
-        # chart_data = pd.DataFrame(np.random.rand(10, 4), columns= ["NO2","C2H5CH","VOC","CO"])
-        st.line_chart(df2plot, height=290)
+        # st.line_chart(df2plot, height=290)
+        df2plot = st.session_state['GGS_df'].iloc[:,1:7]
+        df2plot2 = pd.melt(df2plot.reset_index(), id_vars=["index"])
+        line_chart2 = alt.Chart(df2plot2).mark_line().encode(
+            alt.X('index', title='Sample index'),
+            alt.Y('value', title='Value'),
+            color=alt.Color("variable", type="nominal", title=""),
+        ).properties(
+            title='Raw Data'
+        ).properties(width=400, height=290)
+
+        st.altair_chart(line_chart2)
      
 else:
      st.write('Smelling ...1...2...3:')
