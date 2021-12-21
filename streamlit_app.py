@@ -6,6 +6,7 @@ import tensorflow as tf
 from altair.vegalite.v4.schema.core import Header
 import altair as alt
 import serial
+from PIL import Image
 
 
 
@@ -52,8 +53,8 @@ test_sample = [2378, 64, 15, 64, 93, 15, 66]
 ## Page decorations
 ##------------------------
 st.title('Hello World! :sunglasses:')
-st.write('Welcome to AI Sense. We are Igor Isaev and Hazel Wat, current student at Data Science Retreat, Berlin. Batch 28. Our final portfolio project is AI Sense. We use a machine learning model to detech smells and categorized it.')
-st.write('4 Elements are extracted from the gas sensors. They are NO2, C2H5CH, VOC, CO. We utilize machine learning models to establish correlation and predict the result. Gas interval are collected at 10s.')
+st.write('Welcome to Portfolio Project - AI Sense. We are Igor Isaev and Hazel Wat, current student at Data Science Retreat, Berlin. Batch 28 (Sept-Dec 2021). We use a machine learning model to detech smells and categorize it.')
+st.write('6 Elements are extracted from the gas sensors. They are NO2, C2H5CH, VOC, CO, temperature and humidity. We utilize machine learning models to establish correlation and predict the result. Gas interval are collected at 10s.')
 
 
 ##------------------------
@@ -90,7 +91,7 @@ if st.button('Read data from sensor:'):
     st.session_state['GGS_df'] = pd.DataFrame(GGS_list,
                      columns=["time_ms", "NO2", 
                      "C2H5OH", "VOC", "CO",
-                      "TdegC", "RH"])
+                      "Temperature", "Humidity"])
 
 
 else:
@@ -129,7 +130,7 @@ if st.button('Get premeasured test data:'):
             RH], 
             index=["time_ms", "NO2", 
                      "C2H5OH", "VOC", "CO",
-                      "TdegC", "RH"]).T
+                      "Temperature", "Humidity"]).T
 
     for my_bar_c in range(100):
         time.sleep(0.0001)
@@ -151,6 +152,7 @@ if st.button('Predicting:'):
     with col1: 
         ## Prediction
         # if data2predictArr.size == 6:
+        st.balloons()
         if st.session_state['GGS_df'].shape == (N_of_readings, 7):
             
             data2predictArr = st.session_state['GGS_df'].iloc[:,1:].to_numpy()
@@ -209,3 +211,7 @@ else:
 st.write('Connect with us')
 st.write('Igor Isaev: https://www.linkedin.com/in/igor-isaev/')
 st.write('Hazel Wat: https://www.linkedin.com/in/hazelwat/')
+st.write("Github: https://github.com/igivis7/DRS28_Hazel_n_Igor_portfolio_project")
+
+image=Image.open("Pale Yellow and Blue Rounded Square Photo Collage.jpg")
+st.image(image)
