@@ -213,5 +213,5 @@ st.write('Igor Isaev: https://www.linkedin.com/in/igor-isaev/')
 st.write('Hazel Wat: https://www.linkedin.com/in/hazelwat/')
 st.write("Github: https://github.com/igivis7/DRS28_Hazel_n_Igor_portfolio_project")
 
-image=Image.open("Pale Yellow and Blue Rounded Square Photo Collage.jpg")
+image=Image.open("pic_20Dec21.jpg")
 st.image(image)
