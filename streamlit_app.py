@@ -60,7 +60,8 @@ if st.button('Read data from sensor:'):
 
     ## collect data to predict
     # N_of_readings = 10 #5Hz=200ms : 10 -> 2sec
-    serial_port = '/dev/ttyACM0'
+    # serial_port = '/dev/ttyACM0' #for linux
+    serial_port = '/dev/cu.usbmodem101' #for mac
     baud_rate = 9600
 
     GGS_list = []
