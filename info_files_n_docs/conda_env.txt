@@ -1,9 +1,0 @@
-conda create -n pyAIsense python=3.9.7
-
-conda activate pyAIsense
-
-pip install ipykernel
-
-python -m ipykernel install --user --name pyAIsense --display-name "pyAIsense_env"
-
-pip3 install -r requirements_AIsense.txt
