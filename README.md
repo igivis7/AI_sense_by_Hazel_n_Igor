@@ -41,12 +41,29 @@ The demo of the project can be found on streamlit service by the following link.
 
 ---
 
-***
 - initially we used edge impulse to collect and train
 - but later we faced problems with the project and wanted to try diverse options of the the data manipulation to fix it
+- this project shows out attempt of odor detector realization with help of Arduino.
+---
 
-***
+## How to make it running.
 
+Here is an instruction to make you copy of the project running.
+There a few steps to create a device that is able to detect and distinguish odors:
+  - Step_0. 
+    - 0.1. The 1st and the most obvious: get an Arduino, Gas Sensor, HDT Sensor, and supplementary parts to combine it.
+    - 0.2. Assemble according to a scheme [__!__ ref to image and description].
+    - 0.3. Upload firmware [__!__ file_name] to Arduino.
+    - 0.4. Preheat the GGSv2 (depending on the status of the sensor the preheating process might take up **72 hours!!!**)
+  - Step_1. Collect and save data for all samples with script [__!__ script name]  <!-- Double space at the end of the line to make line-break -->  
+  *Take care of*:
+    - Before running the script please check the folder where the data will be saved
+    - Check the saved files on the bad-formatted data [__=!=__ explain what is bad-formatted data].
+  - Step_2. Train the Neural Network with script [__!__ script name]  
+    - Check the name of the model and the place where the model will be saved
+
+
+---
 
 
 
