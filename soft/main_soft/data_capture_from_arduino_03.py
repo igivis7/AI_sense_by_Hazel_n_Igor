@@ -14,7 +14,7 @@ N_of_readings = 10*60*10 #10Hz 60sec 10min
 plot_update_factor = 100 #every 10
 
 label = "lemon"
-pathW = '/home/DSR28_portfolio_project/Measurements_n_Tests/GGS_arduino_readings/GGSv2I_complete/run3_two_sensors/'
+pathW = '/home/trix_arch/IIVspace/DataSc/DataCamp2021/DSR_B28_work/DSR28_portfolio_project/Measurements_n_Tests/GGS_arduino_readings/GGSv2I_complete/run3_two_sensors/'
 
 
 

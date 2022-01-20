@@ -1,0 +1,29 @@
+Challenges a features of work with GGSv2
+==============
+
+The biggest adventure during the project was hardware
+
+
+During the project we have learned a lot about ds but even more about hardware and particularly about GGSv2 sensor.
+
+All features of the sensor come from its constitution and principles on which it is built
+
+The sensor combines 4 gas detector heads that utilize MOS/MOF principle. It is well explained in the following article [ref].
+
+First of all due to complicated (on micro scale) body structure (bulk body and oxide film) it is not possible to produce 2 identical sensors (also apllicable to other devices but here is most visible)
+
+Means a small difference in body structure will give relatively big/visible difference in readings. That is why all sensors and particularly head must be calibrated.
+
+Second, the readings strongly depend on a head conditions mainly temperature, contamination status and humidity.
+
+The manual for the sensor say that after unpacking or after long inactivity the sensor must be preheated up to 72hours. Additionally, after unpacking procedure, a sensor must be preheated 24 hours before each use (after break).
+
+Additionaly to it the room temperature has strong influence on the readings . The lower the temperature the lower the reading value. That is why we have added dht11 sensor to the project and have done measurements for 3 environmental conditions.
+edited 20:02
+
+Also there is cross-talk between heads. Means a head measures concentration of not only specified gas but also another gases. [See ref]
+
+One more challenge that to be mentioned is the fact that the sensor warm-up procedure must be well established so that the sensor would provide the same readings for the same sample. This comes from beforementioned features. At some moment we have noticed that the readings of the sensor is completely different compare to the values of a sample measurements, which were collected for the training procedure. The environmetal conditions (temperature, and humidity) were completely the same. The problem of unreproducible measurements is still unclear to us.
+We suppose that this might happed due to the fact that before training data collection the sensor was continuously working more than a week. Afterwards the sensor was off for 2(?) days and before the test measurements it was pre-warmed only 24 hours (which stays in instructions and should be enough). We suppose that after 24hours of warm-up the readings stibilize but not completely.
+Also we suppose that during the break the sensor might be contaminated with some dust, what resulted to difference in readings.  
+
