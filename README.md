@@ -56,6 +56,28 @@ The demo of the project can be found on streamlit service by the following link.
 
 ---
 
+the format of the files should be as it is described in the ipynb file 01
+
+---
+
+copy hints from ipynb file 01
+
+---
+
+initially all samles are saved to separate files, afterwards the files are combined
+
+---
+
+cd ./soft/streamlit_app/
+streamlit run streamlit_app.py
+
+---
+
+online streamlit app: 
+https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py
+
+---
+
 ## How to make it running.
 
 Here is an instruction to make you copy of the project running.  
