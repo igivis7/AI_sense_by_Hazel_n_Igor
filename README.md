@@ -4,6 +4,15 @@
 #
 #
 #
+ToDO
+- 
+
+#
+#
+#
+
+
+
 
 
 # AI_sense_by_Hazel_n_Igor
@@ -12,27 +21,30 @@ The **AI_sense_by_Hazel_n_Igor** repository is a workspace for portfolio project
 
 This repository is forked on https://github.com/igivis7/ and https://github.com/hahahazel to reflect the work of all contributors.
 
+The online version of the app is created with Streamlit and can be found here:  
+https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py
 
+---
+## Contents
+- About the project
+- Live demo
+- How to make it running
+  - [] list of codes w description
+- Assembling and Connecting to computer
+- [] features of the project
+- [] future plans and possible upgrade
 
 ---
 
-- What is the project about
-- how to see some live demo via streamlit
-- what hardware is needed
-- how to run the code
-  - list of codes w description
-- features of the project
-- future plans and possible upgrade
-
----
-
-### About the project
+## About the project
 
 This project was dedicated to apply our newly gained knowledge of data science on a real-world task. 
 
-As the object of study we decided to take [Grove multichannel Gas Sensor V2](https://wiki.seeedstudio.com/Grove-Multichannel-Gas-Sensor-V2/) (GGSv2) sensor and by implementation of Machine Learning solve an odor recognition task.
+As the object of study, we decided to take 
 
-During the project we have practiced building of DS project from scratch, mastered our ML skills and learned ways to overcome problems. 
+[Grove multichannel Gas Sensor V2](https://wiki.seeedstudio.com/Grove-Multichannel-Gas-Sensor-V2/) (GGSv2) sensor and implement Machine Learning to solve an odor recognition task.
+
+During the project we have practiced building of Data Science (DS) project from scratch, mastered our Machine Learning (ML) skills and learned ways to overcome problems. 
 
 The GGSv2 sensor consists of 4 measurement heads for measuring Nitrogen dioxide (NO2), Carbon monoxide (CO), Ethyl alcohol (C2H5OH) and Volatile organic compounds (VOCs). 
 Each head is an [metal oxide semiconductor gas detector](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7700484/) made to measure a certain gas molecule.
@@ -41,68 +53,104 @@ The GGSv2 sensor can be used together with Arduino boards, [WIO terminal](https:
 
 To make classification of odors a fully connected neural network was implemented.
 
-The live demo(with precollected samples), code description, project features, hardware list and possible upgrades are listed below.
-
-
-### Live demo
-
-The demo of the project can be found on streamlit service by the following link.
+The live demo (with pre-collected samples), code description, project features, hardware list and possible upgrades are listed below.
 
 ---
 
-- initially we used edge impulse to collect and train
-- but later we faced problems with the project and wanted to try diverse options of the the data manipulation to fix it
-- this project shows out attempt of odor detector realization with help of Arduino.
+## Live demo
+<img src="./info_n_docs/images/streamlit_screenshot_1.png" width="200">
 
----
-
-the format of the files should be as it is described in the ipynb file 01
-
----
-
-copy hints from ipynb file 01
-
----
-
-initially all samles are saved to separate files, afterwards the files are combined
-
----
-
-cd ./soft/streamlit_app/
-streamlit run streamlit_app.py
-
----
-
-online streamlit app: 
-https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py
+There are two options to see run live demo:
+1. Online version via [Streamlit](https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py) app. There is possible to see GUI and run with pre-trained model and simulated samples. It does not work with hardware (GGSv2).
+    1. go to [the app page](https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py) 
+    2. press `Get random premeasured test data` button.
+    3. press `Predicting` button to run prediction using existing model. 
+2. Local Streamlit app demo.
+    1. make sure you have installed all required packages in your environment (see the next section)
+    2. go to the folder 
+    `cd ./soft/streamlit_app/`
+    3. run `streamlit run streamlit_app.py`
 
 ---
 
 ## How to make it running.
 
-Here is an instruction to make you copy of the project running.  
-The procedure is described for a Linux-based OS. It was also was checked with MacOS, but not Windows.  
-There a few steps to create a device that is able to detect and distinguish odors:
-  - **Step_0.** Preparations
-    - **0.1.** Hardware related
-      - **0.1.1.** The 1st and the most obvious: get an Arduino, Gas Sensor, HDT Sensor, and supplementary parts to combine it.
-      - **0.1.2.** Assemble according to a scheme [__!__ ref to image and description].
-      - **0.1.3.** Upload firmware [__!__ file_name] to Arduino.
-      - **0.1.4.** Preheat the GGSv2 (depending on the status of the sensor the preheating process might take up **72 hours!!!**)
-    - **0.2.** Software related
-      - **0.2.1.** Create Conda environment (suggested by it is up to user, one can use other environment manager or not use evnironments at all).
-      - **0.2.2.** Install required packages in the environment.
-      - **0.2.3.** Install Arduino IDE.
-  - **Step_1.** Collect and save data for all samples with script [__!__ script name]  <!-- Double space at the end of the line to make line-break -->  
-  *Before running the script*:
-    - Connect Arduino to laptop and check the serial port related to arduino board
-    - Check the folder where the data will be saved
-    - Check the saved files on the bad-formatted data [__!__ explain what is bad-formatted data].
-  - **Step_2.** Train the Neural Network with script [__!__ script name]  
-    - Check the name of the model and the place where the model will be saved
-  - **Step_3.** Measure and Classify
-    - **3.1.** First of all try to make prediction with jupyther-notebook script [__!__ script name].
-    - **3.2.** Run streamlit app. [__!__ prehaps changes in the app are needed]
+Here is an instruction to make your copy of the project running.  
+The procedure is described for a Linux-based OS. It was also was checked with MacOS, but not with Windows.  
+
+There a few steps to create a device that is able to detect and distinguish odors: 
+
+0. Get an Arduino, Gas Sensor, HDT Sensor, and supplementary parts to combine it.
+1. Assemble the device according to the instructions in the section [Assembling and Connectig to computer](#assembling-and-connectig-to-computer). And connect to a computer.
+2. Install Arduino IDE.
+3. Upload firmaware to arduino:
+    - open file [__!__ files] in Arduino IDE
+    - select board
+    - select port
+    - check
+    - upload
+4. Create Conda environment and install requirements:
+    - `conda create -n pyAIsense python=3.9.7`
+    - `conda activate pyAIsense`
+    - `pip install ipykernel`
+    - `python -m ipykernel install --user --name pyAIsense --display-name "pyAIsense_env"`
+    - `pip install -r ./info_n_docs/requirements_AIsense.txt`
+    - `jupyter-notebook`
+5. Collect data with `01_Collect_Data.ipynb`  
+from *./soft/main_soft/*   
+Settings:
+    - in cell `Settings to Change`
+        - `dir_2_save` directory to save collected data, located in *./data/readback*
+        - `label` name of a sample
+        - `add_label` additional label, not taken into further analysis, but cann't be empty
+        - `env_condition` name of condition for measurement like *cold*, *humid* or *warm*
+        -  `reading_duration` time of sample collection in [min] (0.2min=12sec)
+    - in cell `Additional Settings`
+        - `serial_port` the port of Arduino connection. In Linux default is */dev/ttyACM0*, but might differ. Use Arduino IDE to find the correct port.
+6. Check the collected data with `02_Check_Data.ipynb`  
+from *./soft/main_soft/*  
+Settings:
+    - cell `Change to the directory with data`
+        - `dir_data` change to the directory with collected data.
+7. Convert multiple files into a single one with `03_Data_to_Single_File.ipynb`  
+from *./soft/main_soft/*  
+Settings:
+    - cell `Change to the directory with data`
+        - `dir_data` change to the directory with collected data.  
+To remember:
+    - cell `Save to a new file`
+        - output of the cell, parameter `filename_to_save`
+8. Train a model with `04_TFmodel_Train.ipynb`  
+from *./soft/main_soft/*  
+Settings:
+    - cell `Settings and Paths`
+        - `filename2load` this should be the file from `03_Data_to_Single_File.ipynb` cell `Save to a new file`
+        - `model_filename` give here the model name
+To remember:
+    - cell `Lets see the classes`
+        - output of the cell, parameter `classes_values`
+9. Make live prediction with `05_TFmodel_Predict.ipynb `  
+from *./soft/main_soft/*  
+Settings:
+    - cell `Define the classes to be measured`
+        - `classes_values` should be list from `04_TFmodel_Train.ipynb` cell `Lets see the classes` output
+    - cell `set the paths and load data`
+        - `model_filename` the name of the model from `04_TFmodel_Train.ipynb` cell `Settings and Paths`
+10. Make Streamlit app running
+    - change in file `./soft/streamlit_app/streamlit_app.py`
+        - line 29 : `model_ff` set models name from `04_TFmodel_Train.ipynb` cell `Settings and Paths`
+        - line 33: `classes_values` should be list from `04_TFmodel_Train.ipynb` cell `Lets see the classes` output
+        - line 63: `serial_port` set correct port of Arduino, can be found via Arduino IDE
+    - run the streamlit:
+        - `cd ./soft/streamlit_app/`
+        - `streamlit run streamlit_app.py`
+
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ---
 
@@ -137,6 +185,35 @@ There a few steps to create a device that is able to detect and distinguish odor
 The data format should be like: `12:40:15.641 -> 258,61,148,86,25,29`:
 - `12:40:15.641` is a record time
 - 6 numbers are: NO2 (GM102B), C2H5OH (GM302B), VOC (GM502B), CO (GM702B), temperature [degC], humidity [%]
+
+---
+
+- initially we used edge impulse to collect and train
+- but later we faced problems with the project and wanted to try diverse options of the the data manipulation to fix it
+- this project shows out attempt of odor detector realization with help of Arduino.
+
+---
+
+the format of the files should be as it is described in the ipynb file 01
+
+---
+
+copy hints from ipynb file 01
+
+---
+
+initially all samles are saved to separate files, afterwards the files are combined
+
+---
+
+cd ./soft/streamlit_app/
+streamlit run streamlit_app.py
+
+---
+
+online streamlit app: 
+https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py
+
 
 ---
 
