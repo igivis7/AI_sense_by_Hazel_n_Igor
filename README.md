@@ -174,9 +174,9 @@ The data format should be like: `12:40:15.641 -> 258,61,148,86,25,29`:
     <img src="./info_n_docs/images/arduino_connectios.png" alt="Drawing" style="width: 400px;"/> </td>
   </tr>
   <tr>
-    <td> <img src="./info_n_docs/images/photo_arduino_connectios_1.jpeg" alt="Drawing" style="width: 240px;"/> </td>
-    <td> <img src="./info_n_docs/images/photo_arduino_connectios_3.jpeg" alt="Drawing" style="width: 240px;"/> </td>
-    <td> <img src="./info_n_docs/images/photo_arduino_connectios_4.jpeg" alt="Drawing" style="width: 240px;"/> </td>
+    <td> <img src="./info_n_docs/images/photo_arduino_connectios_1.jpeg" alt="Drawing" style="width: 200px;"/> </td>
+    <td> <img src="./info_n_docs/images/photo_arduino_connectios_3.jpeg" alt="Drawing" style="width: 200px;"/> </td>
+    <td> <img src="./info_n_docs/images/photo_arduino_connectios_4.jpeg" alt="Drawing" style="width: 200px;"/> </td>
   </tr>
 </table>
 
