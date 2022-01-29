@@ -1,20 +1,3 @@
-# >>>>>THIS REPO IS UNDER CONSTRUCTION<<<<<
-## The project is finished but the FINAL and CLEAN version of the repository is coming soon. 
-
-#
-#
-#
-ToDO
-- 
-
-#
-#
-#
-
-
-
-
-
 # AI_sense_by_Hazel_n_Igor
 
 The **AI_sense_by_Hazel_n_Igor** repository is a workspace for portfolio project of **Hazel Wat** and **Igor Isaev**. The work on the project was done during the classes of Data Science Retreat in 2021 (Batch 28).
@@ -25,14 +8,14 @@ The online version of the app is created with Streamlit and can be found here:
 https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py
 
 ---
+
 ## Contents
-- About the project
-- Live demo
-- How to make it running
-  - [] list of codes w description
-- Assembling and Connecting to computer
-- [] features of the project
-- [] future plans and possible upgrade
+- [About the project](#about-the-project)
+- [Live demo](#live_demo)
+- [How to make it running](#how-to-make-it-running)
+- [Assembling and Connecting to computer](#assembling-and-connecting-to-computer)
+<!-- - [features of the project] -->
+<!-- - [future plans and possible upgrade] -->
 
 ---
 
@@ -80,23 +63,23 @@ The procedure is described for a Linux-based OS. It was also was checked with Ma
 
 There a few steps to create a device that is able to detect and distinguish odors: 
 
-0. Get an Arduino, Gas Sensor, HDT Sensor, and supplementary parts to combine it.
-1. Assemble the device according to the instructions in the section [Assembling and Connectig to computer](#assembling-and-connectig-to-computer). And connect to a computer.
-2. Install Arduino IDE.
-3. Upload firmaware to arduino:
+0. **Get** an Arduino, Gas Sensor, HDT Sensor, and supplementary parts to combine it.
+1. **Assemble** the device according to the instructions in the section [Assembling and Connectig to computer](#assembling-and-connectig-to-computer). And connect to a computer.
+2. **Install Arduino** IDE.
+3. **Upload firmaware** to arduino:
     - open file [__!__ files] in Arduino IDE
     - select board
     - select port
     - check
     - upload
-4. Create Conda environment and install requirements:
+4. **Create Conda environment** and install requirements:
     - `conda create -n pyAIsense python=3.9.7`
     - `conda activate pyAIsense`
     - `pip install ipykernel`
     - `python -m ipykernel install --user --name pyAIsense --display-name "pyAIsense_env"`
     - `pip install -r ./info_n_docs/requirements_AIsense.txt`
     - `jupyter-notebook`
-5. Collect data with `01_Collect_Data.ipynb`  
+5. **Collect data** with `01_Collect_Data.ipynb`  
 from *./soft/main_soft/*   
 Settings:
     - in cell `Settings to Change`
@@ -107,12 +90,12 @@ Settings:
         -  `reading_duration` time of sample collection in [min] (0.2min=12sec)
     - in cell `Additional Settings`
         - `serial_port` the port of Arduino connection. In Linux default is */dev/ttyACM0*, but might differ. Use Arduino IDE to find the correct port.
-6. Check the collected data with `02_Check_Data.ipynb`  
+6. **Check** the collected data with `02_Check_Data.ipynb`  
 from *./soft/main_soft/*  
 Settings:
     - cell `Change to the directory with data`
         - `dir_data` change to the directory with collected data.
-7. Convert multiple files into a single one with `03_Data_to_Single_File.ipynb`  
+7. **Convert** multiple files into a single one with `03_Data_to_Single_File.ipynb`  
 from *./soft/main_soft/*  
 Settings:
     - cell `Change to the directory with data`
@@ -120,7 +103,7 @@ Settings:
 To remember:
     - cell `Save to a new file`
         - output of the cell, parameter `filename_to_save`
-8. Train a model with `04_TFmodel_Train.ipynb`  
+8. **Train** a model with `04_TFmodel_Train.ipynb`  
 from *./soft/main_soft/*  
 Settings:
     - cell `Settings and Paths`
@@ -129,14 +112,14 @@ Settings:
 To remember:
     - cell `Lets see the classes`
         - output of the cell, parameter `classes_values`
-9. Make live prediction with `05_TFmodel_Predict.ipynb `  
+9. **Make live prediction** with `05_TFmodel_Predict.ipynb `  
 from *./soft/main_soft/*  
 Settings:
     - cell `Define the classes to be measured`
         - `classes_values` should be list from `04_TFmodel_Train.ipynb` cell `Lets see the classes` output
     - cell `set the paths and load data`
         - `model_filename` the name of the model from `04_TFmodel_Train.ipynb` cell `Settings and Paths`
-10. Make Streamlit app running
+10. Make **Streamlit app** running
     - change in file `./soft/streamlit_app/streamlit_app.py`
         - line 29 : `model_ff` set models name from `04_TFmodel_Train.ipynb` cell `Settings and Paths`
         - line 33: `classes_values` should be list from `04_TFmodel_Train.ipynb` cell `Lets see the classes` output
@@ -146,17 +129,12 @@ Settings:
         - `streamlit run streamlit_app.py`
 
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ---
 
-## Assembling and Connectig to computer
+## Assembling and Connecting to computer
 
-**Parts:** Adruino Uno, GGSv2, DHT11
+**Parts:** Arduino Uno, Grove multichannel Gas Sensor V2 (GGSv2), DHT11
 
 **Connections table:**
 | Device Name | Device Pin | Arduino Pin   |
@@ -169,7 +147,9 @@ Settings:
 |             | VCC        | 5V            |
 |             | Serial Data| Digital Pin 2 |
 
-**List of steps **
+
+**List of steps:**
+
 1.  Connect parts according to the table.
 2.  Connect to computer via USB.
 3.  Open Arduino IDE (install it if it is not yet done).
@@ -179,57 +159,41 @@ Settings:
 7.  IDE: Sketch -> Verify/Compile
 8.  IDE: Sketch -> Upload
 9.  If appears an error "Error opening serial port '/dev/ttyACM0'"  
-    then in terminal: `sudo chmod 777 /dev/ttyACM0`.
+    then in terminal: `sudo chmod 666 /dev/ttyACM0`.
 10. See the output: IDE: Tools -> Serial Monitor  
     
 The data format should be like: `12:40:15.641 -> 258,61,148,86,25,29`:
 - `12:40:15.641` is a record time
 - 6 numbers are: NO2 (GM102B), C2H5OH (GM302B), VOC (GM502B), CO (GM702B), temperature [degC], humidity [%]
 
+
+**Schematics of the connections:**
+
+<table>
+  <tr>
+    <img src="./info_n_docs/images/arduino_connectios.png" alt="Drawing" style="width: 250px;"/> </td>
+  </tr>
+  <tr>
+    <td> <img src="./info_n_docs/images/photo_arduino_connectios_1.jpeg" alt="Drawing" style="width: 250px;"/> </td>
+    <td> <img src="./info_n_docs/images/photo_arduino_connectios_3.jpeg" alt="Drawing" style="width: 250px;"/> </td>
+    <td> <img src="./info_n_docs/images/photo_arduino_connectios_4.jpeg" alt="Drawing" style="width: 250px;"/> </td>
+  </tr>
+</table>
+
 ---
 
+<!--
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-->
+
+
+
+<!--
 - initially we used edge impulse to collect and train
 - but later we faced problems with the project and wanted to try diverse options of the the data manipulation to fix it
 - this project shows out attempt of odor detector realization with help of Arduino.
-
----
-
-the format of the files should be as it is described in the ipynb file 01
-
----
-
-copy hints from ipynb file 01
-
----
-
-initially all samles are saved to separate files, afterwards the files are combined
-
----
-
-cd ./soft/streamlit_app/
-streamlit run streamlit_app.py
-
----
-
-online streamlit app: 
-https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py
-
-
----
-
-
-DRS28_Hazel_n_Igor_portfolio_project
-
-The following people contributed equally to this repository (in alphabetical order):
-
-- Igor Isaev
-- Hazel Wat
-
-
-## Environment for the project
-1. `conda create -n pyAIsense python=3.9.7`
-2. `conda activate pyAIsense`
-3. `pip install ipykernel`
-4. `python -m ipykernel install --user --name pyAIsense --display-name "pyAIsense_env"`
-5. `pip3 install -r requirements_AIsense.txt`
-6. `jupyter-notebook`
+-->
