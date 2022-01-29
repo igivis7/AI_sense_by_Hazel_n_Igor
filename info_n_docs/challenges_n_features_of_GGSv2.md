@@ -1,4 +1,6 @@
-# Challenges a features of work with GGSv2
+# Features and Challenges of work with GGSv2
+
+[Back to Readme](../README.md)
 
 
 The biggest adventure during the project was hardware.

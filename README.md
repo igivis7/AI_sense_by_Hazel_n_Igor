@@ -14,7 +14,7 @@ https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/ma
 - [Live demo](#live-demo)
 - [How to make it running](#how-to-make-it-running)
 - [Assembling and Connecting to computer](#assembling-and-connecting-to-computer)
-<!-- - [features of the project] -->
+- [Features of the project](#features-of-the-project)
 <!-- - [future plans and possible upgrade] -->
 
 ---
@@ -181,6 +181,13 @@ The data format should be like: `12:40:15.641 -> 258,61,148,86,25,29`:
 </table>
 
 ---
+
+## Features of the project
+
+See in the separate page:
+[Features and Challenges of work with GGSv2](./info_n_docs/challenges_n_features_of_GGSv2.md)
+
+
 
 <!--
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
