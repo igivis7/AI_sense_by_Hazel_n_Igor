@@ -67,7 +67,7 @@ There a few steps to create a device that is able to detect and distinguish odor
 1. **Assemble** the device according to the instructions in the section [Assembling and Connecting to computer](#assembling-and-connecting-to-computer). And connect to a computer.
 2. **Install Arduino** IDE.
 3. **Upload firmaware** to arduino:
-    - open file [__!__ files] in Arduino IDE
+    - open file `GGSv2_n_DHT11_03_10hz.ino` from *./soft/arduino_soft/GGSv2_n_DHT11_03_10hz/* in Arduino IDE
     - select board
     - select port
     - check
