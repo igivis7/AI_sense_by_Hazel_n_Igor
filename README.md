@@ -11,7 +11,7 @@ https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/ma
 
 ## Contents
 - [About the project](#about-the-project)
-- [Live demo](#live_demo)
+- [Live demo](#live-demo)
 - [How to make it running](#how-to-make-it-running)
 - [Assembling and Connecting to computer](#assembling-and-connecting-to-computer)
 <!-- - [features of the project] -->
@@ -64,7 +64,7 @@ The procedure is described for a Linux-based OS. It was also was checked with Ma
 There a few steps to create a device that is able to detect and distinguish odors: 
 
 0. **Get** an Arduino, Gas Sensor, HDT Sensor, and supplementary parts to combine it.
-1. **Assemble** the device according to the instructions in the section [Assembling and Connectig to computer](#assembling-and-connectig-to-computer). And connect to a computer.
+1. **Assemble** the device according to the instructions in the section [Assembling and Connecting to computer](#assembling-and-connecting-to-computer). And connect to a computer.
 2. **Install Arduino** IDE.
 3. **Upload firmaware** to arduino:
     - open file [__!__ files] in Arduino IDE
