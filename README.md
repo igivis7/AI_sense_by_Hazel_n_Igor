@@ -1,4 +1,4 @@
-# AI_sense_by_Hazel_n_Igor
+# AI sense by Hazel and Igor
 
 The **AI_sense_by_Hazel_n_Igor** repository is a workspace for portfolio project of **Hazel Wat** and **Igor Isaev**. The work on the project was done during the classes of Data Science Retreat in 2021 (Batch 28).
 
@@ -41,7 +41,7 @@ The live demo (with pre-collected samples), code description, project features, 
 ---
 
 ## Live demo
-<img src="./info_n_docs/images/streamlit_screenshot_1.png" width="200">
+<img src="./info_n_docs/images/streamlit_screenshot_1.png" width="500">
 
 There are two options to see run live demo:
 1. Online version via [Streamlit](https://share.streamlit.io/igivis7/ai_sense_by_hazel_n_igor_4streamlit_online/main/streamlit_AIsense_by_Hazel_n_Igor.py) app. There is possible to see GUI and run with pre-trained model and simulated samples. It does not work with hardware (GGSv2).
